@@ -1,0 +1,11 @@
+#%RAML 1.0
+title: Your first data type exercise - objects
+mediaType: application/json
+uses:
+  lib: library.raml
+/allAboutMio:
+  get:
+    responses:
+      200:
+        body:
+          type: lib.Person
