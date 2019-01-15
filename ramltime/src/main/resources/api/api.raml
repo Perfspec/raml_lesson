@@ -1,0 +1,42 @@
+#%RAML 1.0
+title: API
+baseUri: "http://localhost:8081/api"
+mediaType: application/json
+types:
+
+    
+/result:
+  get:
+    description: "The GET request"
+    queryParameters:
+      name:
+        description: "The name of the user"
+        required: true
+        type: string
+        example: "Lilly"
+      age?:
+        description: "The name of the user"
+        type: number
+        example: 1
+    responses:
+      200:
+        body:
+          text/plain:
+              example: This is a get call, Mule Flow from RAML
+    
+/insert:
+  post:
+    body:
+      application/json:    
+        properties:
+          name:
+            type: string
+          age?:
+            type: number
+      
+    responses:
+      200:
+        body:
+          text/plain:
+            example: This is an example POST request
+      
