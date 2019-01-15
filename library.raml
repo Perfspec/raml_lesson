@@ -1,0 +1,24 @@
+#%RAML 1.0 Library
+types:
+  Person:
+    type: object
+    properties:
+      name: string
+      hair-colour: string
+      profile: Profile
+    example:
+      name: Lewis
+      hair-colour: grey
+      profile:
+        dob: 1995-08-11
+        wokeUpTodayAt: Tue, 15 Jan 2019 07:47:59 GMT
+  Profile:
+    type: object
+    properties:
+      dob: date-only
+      wokeUpTodayAt: 
+        type: datetime
+        example: Sun, 28 Feb 2016 16:41:41 GMT
+        format: rfc2616 # <-- this is required,
+        # otherwise, the example is invalid,
+        # because the format is set to default
